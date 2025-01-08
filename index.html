@@ -25,6 +25,81 @@
                 gap: 10px;
             }
 
+            nav {
+                position: sticky;
+                top: 0;
+                width: 100%;
+                height: 95vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            nav span u {
+                color: white;
+            }
+            nav h1 {
+                font-size: 40px;
+            }
+
+            nav p {
+                color: rgba(255, 255, 255,0.612);
+                font-weight: 250;
+            }
+            nav ul {
+                list-style:none;
+            }
+            nav ul li a {
+                color: rgb(137, 137, 137);
+                display: flex;
+                width: min-content;
+                align-items: center;
+                text-decoration: none;
+                padding-bottom: 7px;
+            }
+
+            .menu-item hr {
+                border: 1px solid rgb(112, 112, 112);
+                width: 40px;
+                transition: border-color 0.2s ease-in-out,width 0.2s;
+                margin:0 5px;
+            }
+
+            .active hr {
+                border: 1px solid white;
+                width: 80px;
+
+            }
+            .active {
+                color: white;
+            }
+
+            @media screen and (max-width:804px) {
+                .my-theme {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    gap: 10px;
+                }
+
+                nav {
+                    position: relative;
+                    top: 0;
+                    width: 90%;
+                    height: min-content;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto;
+                }
+                
+                /* nav ul {
+                    display: none;
+                } */
+            }
 
         </style>
     </head>
@@ -37,7 +112,14 @@
                         <br>Much like a <a style="color: rgb(199, 75, 75);font-weight: bold;">Saiyan</a> training to reach new heights,
                         <br>I continuously strive to enhance my skills in Python, AI, and automation.
                         <br>My journey in technology is driven by a passion for problem-solving and a commitment to excellence. 
-                        <br> <a style="color: rgb(111, 213, 145);font-weight: bolder;">Let’s connect and power up our projects together!</a></p>
+                        <br> <a style="color: rgb(111, 213, 145);font-weight: bolder;">Let’s connect and power up our projects together!</a>
+                    </p>
+                    <ul>
+                        <li><a class="menu-item active" href="#block1">01&nbsp;<hr>&nbsp;Skills</a></li>
+                        <li><a class="menu-item" href="#block2">02&nbsp;<hr>&nbsp;Experience</a></li>
+                        <li><a class="menu-item" href="#block3">03&nbsp;<hr>&nbsp;Projects</a></li>
+                        <li><a class="menu-item" href="#block4">04&nbsp;<hr>&nbsp;Contact</a></li>
+                    </ul>
                 </div>
             </nav>
         </div>
