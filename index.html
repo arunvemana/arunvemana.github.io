@@ -1,147 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="ASV_logo.png">
-        <title>Vemana Arun Sai</title>
-        <style>
-            * {
-                scroll-behavior: smooth;
-            }
 
-            body {
-                background-color: black;
-                color: white;
-                margin: 0;
-                padding: 0;
-                font-family: monospace;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="ASV_logo.png">
+    <title>Vemana Arun Sai</title>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+
+        .my-theme {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav span u {
+            color: white;
+        }
+
+        nav h1 {
+            font-size: 40px;
+        }
+
+        nav p {
+            color: rgba(255, 255, 255, 0.612);
+            font-weight: 250;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: rgb(137, 137, 137);
+            display: flex;
+            width: min-content;
+            align-items: center;
+            text-decoration: none;
+            padding-bottom: 7px;
+        }
+
+        .menu-item hr {
+            border: 1px solid rgb(112, 112, 112);
+            width: 40px;
+            transition: border-color 0.2s ease-in-out, width 0.2s;
+            margin: 0 5px;
+        }
+
+        .active hr {
+            border: 1px solid white;
+            width: 80px;
+
+        }
+
+        .active {
+            color: white;
+        }
+
+        .Profile {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .mail-id {
+            color: #959595;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: 0.5s;
+
+        }
+
+        .mail-id:hover {
+            color: white;
+            padding-left: 10px;
+
+        }
+
+        .social-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: min-contents;
+        }
+
+        .social {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin: 10px 10px;
+            font: 14px;
+        }
+
+        .social-icon {
+            height: 20px;
+            margin: 0 10px;
+        }
+
+        .viewicon {
+            filter: invert(1);
+            margin: 0 10px;
+            height: 20px;
+
+        }
+
+        .viewicon:hover {
+            padding-left: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main section h3 {
+            font-size: 35px;
+            font-weight: 250;
+            margin: 20px 10px;
+        }
+
+        .skill-tag {
+            height: 355px;
+            aspect-ratio: 1;
+            margin: 0 auto;
+        }
+
+        .skill-icon {
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .alt-text {
+            position: absolute;
+            bottom: 10px;
+            /* left: 50%; */
+            transform: translateX(50%);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+            visibility: hidden;
+        }
+
+        .image-container:hover .alt-text {
+            visibility: visible;
+        }
+
+        @media screen and (max-width:804px) {
             .my-theme {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 max-width: 1000px;
                 margin: 0 auto;
                 gap: 10px;
             }
 
             nav {
-                position: sticky;
+                position: relative;
                 top: 0;
-                width: 100%;
-                height: 95vh;
+                width: 90%;
+                height: min-content;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                margin: 0 auto;
             }
 
-            nav span u {
-                color: white;
-            }
-            nav h1 {
-                font-size: 40px;
-            }
-
-            nav p {
-                color: rgba(255, 255, 255,0.612);
-                font-weight: 250;
-            }
-            nav ul {
-                list-style:none;
-            }
-            nav ul li a {
-                color: rgb(137, 137, 137);
-                display: flex;
-                width: min-content;
-                align-items: center;
-                text-decoration: none;
-                padding-bottom: 7px;
-            }
-
-            .menu-item hr {
-                border: 1px solid rgb(112, 112, 112);
-                width: 40px;
-                transition: border-color 0.2s ease-in-out,width 0.2s;
-                margin:0 5px;
-            }
-
-            .active hr {
-                border: 1px solid white;
-                width: 80px;
-
-            }
-            .active {
-                color: white;
-            }
-
-            .Profile {
-                display: flex;
-                align-items: center;
-                margin: 20px 0;
-            }
-
-            .mail-id {
-                color: #959595;
-                margin: 0 10px;
-                text-decoration: none;
-                transition: 0.5s;
-
-            }
-
-            @media screen and (max-width:804px) {
-                .my-theme {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    max-width: 1000px;
-                    margin: 0 auto;
-                    gap: 10px;
-                }
-
-                nav {
-                    position: relative;
-                    top: 0;
-                    width: 90%;
-                    height: min-content;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 0 auto;
-                }
-                
-                /* nav ul {
+            /* nav ul {
                     display: none;
                 } */
-            }
+        }
+    </style>
+</head>
 
-        </style>
-    </head>
-    <body>
-        <div class="my-theme">
-            <nav>
-                <div id="sidebar">
-                    <h1 class="title">Hello, World <br> I'm Arun</h1>
-                    <p class="text">A dedicated software engineer with over 7.6 years of experience in transforming challenges into innovative solutions.
-                        <br>Much like a <a style="color: rgb(199, 75, 75);font-weight: bold;">Saiyan</a> training to reach new heights,
-                        <br>I continuously strive to enhance my skills in Python, AI, and automation.
-                        <br>My journey in technology is driven by a passion for problem-solving and a commitment to excellence. 
-                        <br> <a style="color: rgb(111, 213, 145);font-weight: bolder;">Let’s connect and power up our projects together!</a>
-                    </p>
-                    <ul>
-                        <li><a class="menu-item active" href="#block1">01&nbsp;<hr>&nbsp;Skills</a></li>
-                        <li><a class="menu-item" href="#block2">02&nbsp;<hr>&nbsp;Experience</a></li>
-                        <li><a class="menu-item" href="#block3">03&nbsp;<hr>&nbsp;Projects</a></li>
-                        <li><a class="menu-item" href="#block4">04&nbsp;<hr>&nbsp;Contact</a></li>
-                    </ul>
+<body>
+    <div class="my-theme">
+        <nav>
+            <div id="sidebar">
+                <h1 class="title">Hello, World <br> I'm Arun</h1>
+                <p class="text">A dedicated software engineer with over 7.6 years of experience in transforming
+                    challenges into innovative solutions.
+                    <br>Much like a <a style="color: rgb(199, 75, 75);font-weight: bold;">Saiyan</a> training to reach
+                    new heights,
+                    <br>I continuously strive to enhance my skills in Python, AI, and automation.
+                    <br>My journey in technology is driven by a passion for problem-solving and a commitment to
+                    excellence.
+                    <br> <a style="color: rgb(111, 213, 145);font-weight: bolder;">Let’s connect and power up our
+                        projects together!</a>
+                </p>
+                <ul>
+                    <li><a class="menu-item active" href="#block1">01&nbsp;
+                            <hr>&nbsp;Skills
+                        </a></li>
+                    <li><a class="menu-item" href="#block2">02&nbsp;
+                            <hr>&nbsp;Experience
+                        </a></li>
+                    <li><a class="menu-item" href="#block3">03&nbsp;
+                            <hr>&nbsp;Projects
+                        </a></li>
+                    <li><a class="menu-item" href="#block4">04&nbsp;
+                            <hr>&nbsp;Contact
+                        </a></li>
+                </ul>
 
-                    <div class="Profile">
-                        <img class="Profile-pic" style="height: 50px;border-radius: 50%;" src="my image.png" alt="">
-                        <a class="mail-id" href="mailto:arunvemana@outlook.com">arunvemana@outlook.com</a>
-
+                <div class="Profile">
+                    <img class="Profile-pic" style="height: 50px;border-radius: 50%;" src="my image.png" alt="">
+                    <a class="mail-id" href="mailto:arunvemana@outlook.com">arunvemana@outlook.com</a>
+                </div>
+                <div class="social-main">
+                    <a class="social" href="https://github.com/arunvemana">
+                        <img src="resources/git.svg" class="social-icon" alt="">
+                        GitHub
+                        <img src="resources/openlink.svg" class="viewicon" alt="">
+                    </a>
+                    <a class="social" href="https://www.linkedin.com/in/arun-sai-vemana/">
+                        <img src="resources/linkedin.svg" class="social-icon viewicon" alt="">
+                        Linkedin
+                        <img src="resources/openlink.svg" class="viewicon" alt="">
+                    </a>
+                    <a class="social" href="">
+                        <img src="resources/resume.svg" class="social-icon viewicon" alt="">
+                        Resume
+                        <img src="resources/openlink.svg" class="viewicon" alt="">
+                    </a>
+                    <a class="social" href="https://www.instagram.com/littlecrazy2life/">
+                        <img src="resources/instagram.svg" class="social-icon viewicon" alt="">
+                        instagram
+                        <img src="resources/openlink.svg" class="viewicon" alt="">
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <section id="category1">
+                <h3> Skills</h3>
+                <div class="skill-tag">
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/python.svg" alt="python">
+                        <div class="alt-text">Python</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/azure.svg" alt="azure">
+                        <div class="alt-text"> azure</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/Lambda.svg" alt="AWS Lambda">
+                        <div class="alt-text"> AWS Lambda</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/sql.svg" alt="sql">
+                        <div class="alt-text">SQL</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/Go-Logo_White.svg" alt="GO lang">
+                        <div class="alt-text">Go Lang</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/javascript.svg" alt="JavaScript">
+                        <div class="alt-text">javascript</div>
+                    </div>
+                    <div class="image-container">
+                        <img class="skill-icon" src="resources/github.svg" alt="github">
+                        <div class="alt-text">github</div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </body>
+            </section>
+            <section id="category2">
+                <h3>Experience</h3>
+                <div class="xp-card">
+                    <div class="xp-head">
+                        <p>Software Developer</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
 </html>
