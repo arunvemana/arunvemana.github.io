@@ -18,6 +18,12 @@
             padding: 0;
             font-family: monospace;
         }
+        a {
+            color: white;
+            text-decoration-color: red;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 2px;
+        }
 
         /* width */
         ::-webkit-scrollbar {
@@ -271,6 +277,14 @@
             width: min-content;
         }
 
+        .contact-container {
+            background-color: #262626;
+            border-radius: 20px;
+            padding: 10px;
+            overflow: hidden;
+            margin-bottom: 20vh;
+        }
+
         
         @media screen and (max-width:804px) {
             .my-theme {
@@ -298,6 +312,11 @@
             }
             .main-clmn {
                 margin:0 10px;
+            }
+            
+            .contact-container {
+                margin: 10px;
+                /* margin-bottom: 0; */
             }
 
             /* nav ul {
@@ -565,9 +584,43 @@
                     document.addEventListener('DOMContentLoaded', updateProjects);
                 </script>
             </section>
+            <section id="category4">
+                <h3>Contact</h3>
+                <div class="contact-container">
+                    <p>Mail To:</p>
+                    <a href="mailto:arunvemana@outlook.com">arunvemana@outlook.com</a>
+
+                </div>
+            </section>
         </main>
     </div>
+    <!-- scrolling and menu -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const menuItems = document.querySelectorAll('#sidebar .menu-item');
+            const sections = document.querySelectorAll('section');
 
+            function setActiveMenuItem() {
+                const scrollPosition = window.scrollY;
+
+                sections.forEach(function (section, index) {
+                    const sectionTop = section.offsetTop - 60; // Offset to account for fixed header
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    console.log(sectionTop, sectionBottom);
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        menuItems.forEach(function (item) {
+                            item.classList.remove('active');
+                        });
+
+                        menuItems[index].classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', setActiveMenuItem);
+        });
+    </script>
+    <!--for cards-->
     <script>
         const cards = document.querySelectorAll('.xp-card');
 
