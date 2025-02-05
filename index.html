@@ -19,6 +19,28 @@
             font-family: monospace;
         }
 
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f100;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
         .my-theme {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -176,6 +198,54 @@
             visibility: visible;
         }
 
+        .xp-card {
+            padding: 15px;
+            background-color: #1b1b1b;
+            border-radius: 20px;
+            color: white;
+            margin: 7px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .xp-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .xp-card .date {
+            font-size: 14px;
+            color: #c9c9c9;
+        }
+
+        .xp-card ul li {
+            font-weight: 200;
+            list-style: circle;
+            margin: 5px 0;
+            color: #c9c9c9;
+        }
+
+        .xp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-details {
+            display: flex;
+            align-items: center;
+        }
+        
+        .company-details h2 {
+            font-weight: 200;
+            margin: 10px;
+        }
+
+        .company-details .logo {
+            height: 40px;
+        }
+
         @media screen and (max-width:804px) {
             .my-theme {
                 display: grid;
@@ -195,6 +265,10 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0 auto;
+            }
+
+            .xp-card {
+                margin: 0 10px;
             }
 
             /* nav ul {
@@ -220,10 +294,10 @@
                         projects together!</a>
                 </p>
                 <ul>
-                    <li><a class="menu-item active" href="#block1">01&nbsp;
+                    <li><a class="menu-item active" href="#category1">01&nbsp;
                             <hr>&nbsp;Skills
                         </a></li>
-                    <li><a class="menu-item" href="#block2">02&nbsp;
+                    <li><a class="menu-item" href="#category2">02&nbsp;
                             <hr>&nbsp;Experience
                         </a></li>
                     <li><a class="menu-item" href="#block3">03&nbsp;
@@ -302,10 +376,96 @@
                     <div class="xp-head">
                         <p>Software Developer</p>
                     </div>
+                    <div class="company-details">
+                        <img src="https://signanthealth.com/hs-fs/hubfs/Logo-Tagline-Color-1.png?"
+                        class="logo" alt="signanthealth">
+                        <!-- <h2>signanthealth</h2> -->
+                    </div>
+                    <p class="date">Nov/2021 - Present</p>
+                    <p>Development of automation tools to reduce manual work hours, focusing on AI-driven solutions for data processing and reporting.</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Machine Learning</li>
+                        <li>Docker</li>
+                        <li>Azure</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="xp-card">
+                    <div class="xp-head">
+                        <p>Software engineer</p>
+                    </div>
+                    <div class="company-details">
+                        <img style="filter: invert(1);"  src="https://cdn.prod.website-files.com/65952a9c6bd758cb3a53eebd/660b22ba452b20ebeb6450c5_Loginsoft%20Logo%20Black.svg"
+                        class="logo" alt="loginsoft">
+                        <!-- <h2>Loginsoft</h2> -->
+                    </div>
+                    <p class="date">Sep 2019 - Oct 2021</p>
+                    <p>Developed report generation tools and connectors for cybersecurity data.</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>RestAPI's</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+                <div class="xp-card">
+                    <div class="xp-head">
+                        <p>Freelancer</p>
+                    </div>
+                    <div class="company-details">
+                        <img src="resources/freelancer.svg"
+                        class="logo" alt="Freelancer">
+                        <h2>Freelancer</h2>
+                    </div>
+                    <p class="date">Aug2017 - Oct 2019</p>
+                    <p>Data filtering, visualization, and automation using Python.</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>desktop apps</li>
+                        <li>web Development</li>
+                        <li>Sales</li>
+                    </ul>
+                </div>
+                <div class="xp-card">
+                    <div class="xp-head">
+                        <p>consulent</p>
+                    </div>
+                    <div class="company-details">
+                        <img src="https://aroha.co.in/wp-content/uploads/2024/08/aroha_logo.png"
+                        class="logo" alt="aroha">
+                        <h2>Aroha technologies</h2>
+                    </div>
+                    <p class="date">Nov 2015 - Jun 2017</p>
+                    <p>Automation systems for banking forms and customer information modules.</p>
+                    <ul>
+                        <li>Oracle</li>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>Python</li>
+                        <li>.Net</li>
+
+                    </ul>
                 </div>
             </section>
         </main>
     </div>
+
+    <script>
+        const cards = document.querySelectorAll('.xp-card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        });
+
+        cards.forEach((card) => {
+            observer.observe(card);
+        }); 
+    </script>
 </body>
 
 </html>
