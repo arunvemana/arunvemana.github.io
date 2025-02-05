@@ -18,6 +18,7 @@
             padding: 0;
             font-family: monospace;
         }
+
         a {
             color: white;
             text-decoration-color: red;
@@ -242,7 +243,7 @@
             display: flex;
             align-items: center;
         }
-        
+
         .company-details h2 {
             font-weight: 200;
             margin: 10px;
@@ -255,7 +256,7 @@
         .main-clmn {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap:8px;
+            gap: 8px;
         }
 
         .attribute-text {
@@ -285,7 +286,23 @@
             margin-bottom: 20vh;
         }
 
-        
+        .proj-card {
+            background-color: rgb(66, 89, 81);
+            aspect-ratio: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 20px;
+
+        }
+
+        .proj-card:nth-child(even) {
+            margin-top: 40px;
+            margin-bottom: -40px;
+        }
+
+
         @media screen and (max-width:804px) {
             .my-theme {
                 display: grid;
@@ -310,13 +327,30 @@
             .xp-card {
                 margin: 0 10px;
             }
+
             .main-clmn {
-                margin:0 10px;
+                margin: 0 10px;
             }
-            
+
             .contact-container {
                 margin: 10px;
                 /* margin-bottom: 0; */
+            }
+
+            .proj-card {
+                background-color: rgb(66, 89, 81);
+                aspect-ratio: 3/2;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border-radius: 20px;
+
+            }
+
+            .proj-card:nth-child(even) {
+                margin-top: 0;
+                margin-bottom: 0;
             }
 
             /* nav ul {
@@ -425,12 +459,13 @@
                         <p>Software Developer</p>
                     </div>
                     <div class="company-details">
-                        <img src="https://signanthealth.com/hs-fs/hubfs/Logo-Tagline-Color-1.png?"
-                        class="logo" alt="signanthealth">
+                        <img src="https://signanthealth.com/hs-fs/hubfs/Logo-Tagline-Color-1.png?" class="logo"
+                            alt="signanthealth">
                         <!-- <h2>signanthealth</h2> -->
                     </div>
                     <p class="date">Nov/2021 - Present</p>
-                    <p>Development of automation tools to reduce manual work hours, focusing on AI-driven solutions for data processing and reporting.</p>
+                    <p>Development of automation tools to reduce manual work hours, focusing on AI-driven solutions for
+                        data processing and reporting.</p>
                     <ul>
                         <li>Python</li>
                         <li>Machine Learning</li>
@@ -444,8 +479,9 @@
                         <p>Software engineer</p>
                     </div>
                     <div class="company-details">
-                        <img style="filter: invert(1);"  src="https://cdn.prod.website-files.com/65952a9c6bd758cb3a53eebd/660b22ba452b20ebeb6450c5_Loginsoft%20Logo%20Black.svg"
-                        class="logo" alt="loginsoft">
+                        <img style="filter: invert(1);"
+                            src="https://cdn.prod.website-files.com/65952a9c6bd758cb3a53eebd/660b22ba452b20ebeb6450c5_Loginsoft%20Logo%20Black.svg"
+                            class="logo" alt="loginsoft">
                         <!-- <h2>Loginsoft</h2> -->
                     </div>
                     <p class="date">Sep 2019 - Oct 2021</p>
@@ -462,8 +498,7 @@
                         <p>Freelancer</p>
                     </div>
                     <div class="company-details">
-                        <img src="resources/freelancer.svg"
-                        class="logo" alt="Freelancer">
+                        <img src="resources/freelancer.svg" class="logo" alt="Freelancer">
                         <h2>Freelancer</h2>
                     </div>
                     <p class="date">Aug2017 - Oct 2019</p>
@@ -480,8 +515,8 @@
                         <p>consulent</p>
                     </div>
                     <div class="company-details">
-                        <img src="https://aroha.co.in/wp-content/uploads/2024/08/aroha_logo.png"
-                        class="logo" alt="aroha">
+                        <img src="https://aroha.co.in/wp-content/uploads/2024/08/aroha_logo.png" class="logo"
+                            alt="aroha">
                         <h2>Aroha technologies</h2>
                     </div>
                     <p class="date">Nov 2015 - Jun 2017</p>
@@ -511,7 +546,7 @@
 
                     function createProjectCard(repo) {
                         const card = document.createElement('div');
-                        card.classList.add('pro-card');
+                        card.classList.add('proj-card');
 
                         const deploymentUrl = repo.homepage ? repo.homepage : repo.html_url;
 
