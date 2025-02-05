@@ -249,9 +249,29 @@
         .main-clmn {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap 8px;
+            gap:8px;
         }
 
+        .attribute-text {
+            color: #959595;
+        }
+
+        .pro-attribute-subhead {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .visit-link {
+            color: rgb(151, 151, 151);
+            text-decoration: none;
+            display: flex;
+            font-size: 12px;
+            rotate: 90deg;
+            align-items: center;
+            width: min-content;
+        }
+
+        
         @media screen and (max-width:804px) {
             .my-theme {
                 display: grid;
@@ -478,12 +498,12 @@
 
                         const cardContent = `
                             <div>
-                                <img src="asset/earth.svg" alt="">
+                                <img src="resources/earth.svg" alt="">
                                 <p class="attribute-text">${repo.description || 'No description available.'}</p>
                             </div>
                             <h4 class="pro-attribute-subhead">${repo.name}
                                 <a href="${deploymentUrl}" class="visit-link" target="_blank">Visit
-                                    <img src="asset/openlink.svg" class="openlink" style="height: 17px; opacity: 60%;" alt="">
+                                    <img src="resources/openlink.svg" class="viewicon" style="height: 17px; opacity: 60%;" alt="">
                                 </a>
                             </h4>
                         `;
