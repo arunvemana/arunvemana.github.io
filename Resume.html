@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- inclue html2canvas as the support to jspdf-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+
+    <!-- Include jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Arun Sai Vemana</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: justify;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        p>a {
+            padding-left: 10px;
+        }
+
+        .header-center {
+            position: relative;
+            text-align: center;
+        }
+
+        .contact-info {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            position: relative;
+        }
+
+        .company-info {
+            padding-left: 20px;
+        }
+
+        .contact-info>div {
+            position: relative;
+            text-align: center;
+            padding-left: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .skills,
+        .experience,
+        .projects,
+        .education {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li,
+        .experience li,
+        .projects li,
+        .education li {
+            margin-bottom: 10px;
+        }
+
+        .experience li {
+            margin-bottom: 15px;
+        }
+
+        .experience ul {
+            margin-left: 20px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="download-btn">Download as PDF</button>
+    <div class="container">
+        <h1 class="header-center">Arun Sai Vemana</h1>
+        <div class="contact-info">
+            <div>
+                <p><i class="fa fa-phone"></i><a href="http://wa.me?text=725422227">+91 7259422227</a></p>
+            </div>
+            <div>
+                <p><i class="fa fa-envelope"></i><a href="mailto:arunvemana@outlook.com">arunvemana@outlook.com</a></p>
+            </div>
+            <div>
+                <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/arun-sai-vemana/">arun sai
+                        vemana</a></p>
+            </div>
+            <div>
+                <p><i class="fa fa-globe"></i><a href="http://arunvemana.github.io">arunvemana.github.io</a></p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>PROFESSIONAL SUMMARY</h2>
+            <p style="justify-content: center;">Accomplished Software Engineer with over <b>7.6</b> years of experience,
+                including <b>2</b> years as a freelancer, specializing in Python and a diverse range of data analysis
+                tools.
+                <br>Possessing a strong foundation in automation and machine learning, I excel in developing innovative
+                automation tools that significantly enhance operational efficiency and minimize manual workloads.
+                Demonstrated ability to collaborate effectively with cross-functional teams to gather requirements and
+                implement data-driven solutions.
+                <br> I am eager to contribute to a forward-thinking organization that prioritizes creativity and
+                technical excellence in the fields of AI and data science.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>SKILLS</h2>
+            <ul class="skills">
+                <li><strong>Programming Languages:</strong> Python, GO lang</li>
+                <li><strong>Frameworks & Libraries:</strong> Pandas, numpy, FastAPI, Django, Flask</li>
+                <li><strong>Tools & Technologies:</strong> Power BI, MSSQL</li>
+                <li><strong>Machine Learning:</strong> Python, Linear Regression</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>PROFESSIONAL EXPERIENCE</h2>
+            <ul class="experience">
+                <li>
+                <li class="company-info"><strong>Senior operations Software Engineer</strong> at Signant Health,
+                    Hyderabad (Nov 2021 -
+                    Present)</li>
+                <ul>
+                    <li>Developed automation tools to streamline processes, reducing manual work hours.</li>
+                    <li>Collaborated with teams to gather requirements and implement data-driven solutions.</li>
+                    <li>Conducted unit testing and created documentation for automation tools</li>
+                    <li>Utilized MSSQL and Power BI to provide actionable insights and reporting solutions.</li>
+                </ul>
+                </li>
+                <li>
+                <li class="company-info"><strong>Software Engineer</strong> at LoginSoft (Sep 2019 - Oct 2021)</li>
+                <ul>
+                    <li>Developed connectors for gathering threat intelligence data from various sources.</li>
+
+                    <li>Created a desktop application for generating reports from CipherTrace APIs.</li>
+
+                    <li>Engaged in backend development using Python and Flask.</li>
+                </ul>
+                </li>
+                <li>
+                <li class="company-info">
+                    <strong>Freelancer</strong> (Aug 2017 - Oct 2019)
+                </li>
+                <ul>
+                    <li>Completed projects involving data filtering, visualization, and automation.</li>
+
+                    <li>Developed standalone applications using Python packages for web scraping and data analysis.</li>
+                </ul>
+                </li>
+                <li>
+                <li>
+                <li class="company-info">
+                    <strong>Software Developer</strong> at Aroha Technologies (Nov 2015 - Jun 2017)
+                </li>
+                <ul>
+                    <li>Automated banking forms and upgraded banking portals using Python and .NET technologies.</li>
+
+                    <li>Involved in customer information modules and complaint management systems.</li>
+                </ul>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Wait to load completely
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('download-btn').addEventListener('click', function () {
+                const container = document.querySelector('.container');
+                html2canvas(container).then(function (canvas) {
+                    const imgData = canvas.toDataURL('image/png');
+
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    const pageWidth = doc.internal.pageSize.getWidth();
+                    const pageHeight = doc.internal.pageSize.getHeight();
+
+                    const imgWidth = canvas.width;
+                    const imgHeight = canvas.height;
+
+                    const scaleFactor = Math.min(pageWidth / imgWidth, pageHeight / imgHeight);
+
+                    // Add the captured image to the PDF
+                    doc.addImage(imgData, 'PNG', 0, 0, imgWidth * scaleFactor, imgHeight * scaleFactor);
+                    doc.save("arunvemana_resume.pdf");
+                }).catch(function (error) {
+                    console.error("Error capturing the page:", error);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
