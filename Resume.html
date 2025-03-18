@@ -45,7 +45,7 @@
         }
 
         p>a {
-            padding-left: 10px;
+            padding-left: 5px;
         }
 
         .header-center {
@@ -62,13 +62,20 @@
         }
 
         .company-info {
-            padding-left: 20px;
+            padding-left: 10px;
         }
 
         .contact-info>div {
             position: relative;
             text-align: center;
-            padding-left: 10px;
+            padding-left: 5px;
+        }
+        @media (max-width: 768px) {
+            .contact-info {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+                gap: 10px; /* Adjust gap between items */
+            }
         }
 
         .section {
