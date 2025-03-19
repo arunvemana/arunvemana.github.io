@@ -217,21 +217,39 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('download-btn').addEventListener('click', function () {
                 const container = document.querySelector('.container');
+                container.style.width = '1000px';  // Force width to a desktop-like size
+                container.style.margin = '0 auto'; // Center the content
+
                 html2canvas(container).then(function (canvas) {
                     const imgData = canvas.toDataURL('image/png');
 
                     const { jsPDF } = window.jspdf;
-                    const doc = new jsPDF();
-                    const pageWidth = doc.internal.pageSize.getWidth();
-                    const pageHeight = doc.internal.pageSize.getHeight();
+                    const doc = new jsPDF({
+                                        orientation: 'portrait', // 'portrait' or 'landscape'
+                                        unit: 'mm', // Unit is in millimeters (default)
+                                        format: 'a4' // Format is A4 page size
+                                        });
+                    // worked for laptop not mobile screen
+                    //const pageWidth = doc.internal.pageSize.getWidth();
+                    //const pageHeight = doc.internal.pageSize.getHeight();
 
-                    const imgWidth = canvas.width;
-                    const imgHeight = canvas.height;
+                    //const imgWidth = canvas.width;
+                    //const imgHeight = canvas.height;
 
-                    const scaleFactor = Math.min(pageWidth / imgWidth, pageHeight / imgHeight);
+                    //const scaleFactor = Math.min(pageWidth / imgWidth, pageHeight / imgHeight);
 
-                    // Add the captured image to the PDF
-                    doc.addImage(imgData, 'PNG', 0, 0, imgWidth * scaleFactor, imgHeight * scaleFactor);
+                    let imgWidth = 210;  // A4 width in mm
+                    let imgHeight = (canvas.height * imgWidth) / canvas.width;  // Maintain aspect ratio
+
+                    // If the image height exceeds the A4 height, scale it down
+                    if (imgHeight > 297) {
+                        const scaleFactor = 297 / imgHeight;
+                        imgHeight = 297;
+                        imgWidth = imgWidth * scaleFactor;
+                    }
+
+                    // Add the image to the PDF at position (10, 10)
+                    doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
                     doc.save("arunvemana_resume.pdf");
                 }).catch(function (error) {
                     console.error("Error capturing the page:", error);
